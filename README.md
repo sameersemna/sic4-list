@@ -11,7 +11,7 @@ How the data was created:
 1. save file as CSV format using open office
 
 
-MySQL import 
+MySQL Import 
 =========
 
 LOAD DATA INFILE '/Users/sameer/www/test/var/sic_data/sic4-list/divisions.csv' INTO TABLE sic_divisions 
@@ -38,3 +38,22 @@ ENCLOSED BY '\"'
 LINES TERMINATED BY '\n' 
 IGNORE 1 LINES;
 
+
+MongoDB Import
+=========
+
+mongoimport -h 127.0.0.1:3001 -d meteor -c sic_divisions --type csv --file /Users/sameer/www/test/var/sic_data/sic4-list/divisions.csv --headerline
+
+mongoimport -h 127.0.0.1:3001 -d meteor -c sic_groups_major --type csv --file /Users/sameer/www/test/var/sic_data/sic4-list/major-groups.csv --headerline
+
+mongoimport -h 127.0.0.1:3001 -d meteor -c sic_groups_industry --type csv --file /Users/sameer/www/test/var/sic_data/sic4-list/industry-groups.csv --headerline
+
+mongoimport -h 127.0.0.1:3001 -d meteor -c sic_codes --type csv --file /Users/sameer/www/test/var/sic_data/sic4-list/sic-codes.csv --headerline
+
+If using Meteor, get Meteor's MongoDB port: 
+
+$ meteor mongo -U
+
+or
+
+$ ps aux | grep 'mongod'
