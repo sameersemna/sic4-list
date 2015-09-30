@@ -9,3 +9,32 @@ How the data was created:
 
 1. copy, pasted, and pythoned from http://www.osha.gov/pls/imis/sic_manual.html
 1. save file as CSV format using open office
+
+
+MySQL import 
+=========
+
+LOAD DATA INFILE '/Users/sameer/www/test/var/sic_data/sic4-list/divisions.csv' INTO TABLE sic_divisions 
+FIELDS TERMINATED BY ','
+ENCLOSED BY '\"' 
+LINES TERMINATED BY '\n' 
+IGNORE 1 LINES;
+
+LOAD DATA INFILE '/Users/sameer/www/test/var/sic_data/sic4-list/major-groups.csv' INTO TABLE sic_groups_major 
+FIELDS TERMINATED BY ','
+ENCLOSED BY '\"' 
+LINES TERMINATED BY '\n' 
+IGNORE 1 LINES;
+
+LOAD DATA INFILE '/Users/sameer/www/test/var/sic_data/sic4-list/industry-groups.csv' INTO TABLE sic_groups_industry 
+FIELDS TERMINATED BY ','
+ENCLOSED BY '\"' 
+LINES TERMINATED BY '\n' 
+IGNORE 1 LINES;
+
+LOAD DATA INFILE '/Users/sameer/www/test/var/sic_data/sic4-list/sic-codes.csv' INTO TABLE sic_codes 
+FIELDS TERMINATED BY ','
+ENCLOSED BY '\"' 
+LINES TERMINATED BY '\n' 
+IGNORE 1 LINES;
+
